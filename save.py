@@ -18,3 +18,8 @@ def save_data(data, filename='data.csv'):
 
         writer.writerow(data)
 
+# 테스트용 예시 실행
+if __name__ == "__main__":
+    test_data = ['2025.06.18', '지출', '식비', '점심', 12000]
+    save_data(test_data)
+    print("✅ 테스트 저장 완료")
