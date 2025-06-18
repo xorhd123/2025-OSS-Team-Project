@@ -39,8 +39,12 @@ def display_category(records):
     print("-----------------")
     print("      total      ")
     print("-----------------")
-    for cat, total in totals.items():
-        print(f"{cat}: {total}원")
+    total_sum = 0
+    for cat, amt in totals.items():
+        print(f"{cat}: {amt}원")
+        total_sum += amt
+    print(">>")
+    print(f"총 지출: {total_sum}원\n")
     print()
 
 def display_income(records):
@@ -56,8 +60,12 @@ def display_income(records):
     print("------------------")
     print("      income      ")
     print("------------------")
-    for cat, total in totals.items():
-        print(f"{cat}: {total}원")
+    total_sum = 0
+    for cat, amt in totals.items():
+        print(f"{cat}: {amt}원")
+        total_sum += amt
+    print(">>")
+    print(f"총 지출: {total_sum}원\n")
     print() 
 
 
