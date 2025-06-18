@@ -2,8 +2,19 @@
 # import save
 # import view_stats
 
-print("Hello world!")
-print("commit check")
+def Menu():
+    print("--------------------")
+    print("  1. 기록 입력")
+    print("  2. 기록 출력")
+    print("  3. 기록 수정")
+    print("  4. 프로그램 종료")
+    print("--------------------")
+    number = int(input("번호를 입력해주세요: "))
+
+    return number
 
 while True:
-    print("check!")
+    number = Menu()
+    if number==4:
+        break
+    print(f"number: {number}")
