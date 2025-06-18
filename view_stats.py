@@ -43,10 +43,29 @@ def display_category(records):
         print(f"{cat}: {total}원")
     print()
 
+def display_income(records):
+    totals = defaultdict(int)
+    for r in records:
+        if r['type'] == '수입':
+            totals[r['category']] += int(r['amount'])
+
+    if not totals:
+        print("수입 내역 없음")
+        return
+    
+    print("------------------")
+    print("      income      ")
+    print("------------------")
+    for cat, total in totals.items():
+        print(f"{cat}: {total}원")
+    print() 
+
+
 def main():
     records = load_records()
     display_records(records)
     display_category(records)
+    display_income(records)
 
 if __name__ == '__main__':
     main()
