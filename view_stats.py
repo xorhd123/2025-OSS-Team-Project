@@ -3,23 +3,11 @@ from collections import defaultdict
 
 DATA_FILE = 'data.csv'
 
-sample_rows = [
-    ['2025-06-18', '식비', '점심', '12000', '지출'],
-    ['2025-06-18', '교통비', '버스', '12000', '지출'],
-    ['2025-06-18', '용돈', '친구', '12000', '수입'],
-    ['2025-06-18', '월급', '회사', '20000000', '수입'],
-]
-# 테스트
-
-with open(DATA_FILE, 'w', newline = '', encoding='utf-8') as f:
-    writer = csv.writer(f)
-    writer.writerows(sample_rows)
-
 def load_records(filename=DATA_FILE):
     records = []
     try:
         with open(filename, newline='', encoding='utf-8') as f:
-            reader = csv.DictReader(f, fieldnames=['data','category','item','amount','type'])
+            reader = csv.DictReader(f, fieldnames=['date','category','item','amount','type'])
             for row in reader:
                 records.append(row)
     except FileExistsError:
