@@ -3,7 +3,7 @@ from collections import defaultdict
 
 DATA_FILE = 'data.csv'
 
-def load_records(filename=DATA_FILE):
+def load_records(filename=DATA_FILE): # 기록저장
     records = []
     try:
         with open(filename, newline='', encoding='utf-8') as f:
