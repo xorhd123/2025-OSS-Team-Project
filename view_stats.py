@@ -10,7 +10,7 @@ def load_records(filename=DATA_FILE):
             reader = csv.DictReader(f, fieldnames=['date','category','item','amount','type'])
             for row in reader:
                 records.append(row)
-    except FileExistsError:
+    except FileNotFoundError:
         print(f"기록 없음")
     return records
 
