@@ -45,9 +45,23 @@ def select_category():
         print("올바른 번호를 입력해주세요 (1~9).")
 
 #수입 항목명 입력
-def get_income_item():
+def input_income_item():
     return input("수입 항목명을 입력하세요 (예: 월급, 장학금 등): ").strip()
 
 #현재 시간
 def get_current_time():
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+#전체 값 입력
+def get_record():
+    transaction_type = get_transaction_type()
+    amount = get_amount()
+    item = get_item()
+
+    if transaction_type == "지출":
+        category = select_category()
+    else:  # 수입
+        category = input_income_item()
+
+    now = get_current_time()
+    return f"{now},{category},{item},{amount},{transaction_type}"
