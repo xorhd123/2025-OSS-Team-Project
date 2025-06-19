@@ -43,3 +43,7 @@ def select_category():
         if choice in categories:
             return categories[choice]
         print("올바른 번호를 입력해주세요 (1~9).")
+
+#수입 항목명 입력
+def get_income_item():
+    return input("수입 항목명을 입력하세요 (예: 월급, 장학금 등): ").strip()
