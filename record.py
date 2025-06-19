@@ -47,3 +47,7 @@ def select_category():
 #수입 항목명 입력
 def get_income_item():
     return input("수입 항목명을 입력하세요 (예: 월급, 장학금 등): ").strip()
+
+#현재 시간
+def get_current_time():
+    return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
