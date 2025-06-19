@@ -26,7 +26,7 @@ def search_result():
             print(f"[{r['날짜']}] {r['유형']} - {r['카테고리']} / {r['아이템']} / {r['금액']}원")
             found = True
         #유형 검색
-        if choice == '1' and keyword in r['유형']:
+        if choice == '2' and keyword in r['유형']:
             print(f"[{r['날짜']}] {r['유형']} - {r['카테고리']} / {r['아이템']} / {r['금액']}원")
             found = True
         # 카테고리 검색
