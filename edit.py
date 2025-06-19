@@ -1,5 +1,6 @@
 import csv
 from collections import defaultdict
+import os
 
 DATA_FILE = 'data.csv'
 
@@ -17,6 +18,10 @@ def save_records(records, filename=DATA_FILE):
     print(f"수정 내용 저장 완료")
 
 def rewrite_record(records):
+    if not records:
+        print("수정 가능한 항목 없음")
+        return
+    
     print("--------------------")
     print("   수정 가능한 항목   ")
     print("--------------------")
