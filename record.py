@@ -19,3 +19,27 @@ def get_amount():
 #항목명 입력
 def get_item():
     return input("항목명을 입력하세요 (예: 점심, 월급 등): ").strip()
+
+#카테고리 선택 함수
+def select_category():
+    categories = {
+        "1": "식비",
+        "2": "교통",
+        "3": "쇼핑",
+        "4": "문화",
+        "5": "건강",
+        "6": "교육",
+        "7": "생활",
+        "8": "저축",
+        "9": "기타"
+    }
+
+    print("\n카테고리를 선택하세요:")
+    for num, name in categories.items():
+        print(f"[{num}] {name}")
+
+    while True:
+        choice = input("카테고리 번호 입력: ").strip()
+        if choice in categories:
+            return categories[choice]
+        print("올바른 번호를 입력해주세요 (1~9).")
