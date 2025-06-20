@@ -7,7 +7,7 @@ def load_records(filename=DATA_FILE):
     records = []
     try:
         with open(filename, newline='', encoding='utf-8') as f:
-            reader = csv.DictReader(f, fieldnames=['날짜','카테고리','아이템','금액','유형'])
+            reader = csv.DictReader(f, fieldnames=['날짜','유형', '카테고리', '아이템', '금액'])
             for row in reader:
                 records.append(row)
     except FileNotFoundError:
@@ -23,7 +23,7 @@ def display_records(records):
     print(" display records ")
     print("-----------------")
     for r in records:
-        print(f"[{r['날짜']}] {r['카테고리']} - {r['아이템']} / {r['금액']}원 / {r['유형']}")
+        print(f"[{r['날짜']}] {r['유형']} - {r['카테고리']} / {r['아이템']} / {r['금액']}원")
     print()
 
 def display_category(records):
@@ -67,13 +67,3 @@ def display_income(records):
     print(">>")
     print(f"총 지출: {total_sum}원\n")
     print() 
-
-
-def main():
-    records = load_records()
-    display_records(records)
-    display_category(records)
-    display_income(records)
-
-if __name__ == '__main__':
-    main()

@@ -11,7 +11,7 @@ def get_transaction_type():
 #금액 입력 함수
 def get_amount():
     while True:
-        amount = input("금액을 입력하세요 (숫: ").strip()
+        amount = input("금액을 입력하세요 (숫자: ").strip()
         if amount.isdigit():
             return amount
         print("숫자만 입력해주세요.")
@@ -54,14 +54,17 @@ def get_current_time():
 
 #전체 값 입력
 def get_record():
+
     transaction_type = get_transaction_type()
-    amount = get_amount()
+
     item = get_item()
+
+    amount = get_amount()
 
     if transaction_type == "지출":
         category = select_category()
     else:  # 수입
         category = input_income_item()
 
-    data = get_current_time()
-    return [data, category, item, amount, transaction_type]
+    date = get_current_time()
+    return [date, transaction_type, category, item, amount]

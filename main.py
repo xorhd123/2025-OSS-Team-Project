@@ -31,4 +31,3 @@ while True:
         print("3")
     elif number==4:
         break
-    print(f"number: {number}")
