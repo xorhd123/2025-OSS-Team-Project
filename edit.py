@@ -37,7 +37,9 @@ def rewrite_record(records):
     print("--------------------")
     print("   수정 가능한 항목   ")
     print("--------------------")
-    for idx, r in enumerate(records, start=1):
+    for idx, r in enumerate(records, start=0):
+        if idx==0:
+            continue
         print(f"{idx}: [{r['날짜']}] {r['유형']} - {r['카테고리']} / {r['아이템']} / {r['금액']}원")
     print("--------------------")
 
