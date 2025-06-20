@@ -1,7 +1,7 @@
-# import record
-# import save
-# import view_stats
-# import search
+import record
+import save
+import view_stats
+import search
 import os
 
 
@@ -24,7 +24,7 @@ while True:
     number = Menu()
     clear()
     if number==1:
-        print("1")
+        record.get_record()
     elif number==2:
         print("2")
     elif number==3:

@@ -63,5 +63,5 @@ def get_record():
     else:  # 수입
         category = input_income_item()
 
-    now = get_current_time()
-    return f"{now},{category},{item},{amount},{transaction_type}"
+    data = get_current_time()
+    return f"{data},{category},{item},{amount},{transaction_type}"
