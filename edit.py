@@ -72,12 +72,26 @@ def rewrite_record(records):
                 "6": "교육",
                 "7": "생활",
                 "8": "저축",
-                "9": "기타"
+                "9": "기타",
+                "10": "급여",
+                "11": "용돈",
+                "12": "금융소득",
+                "13": "공적 지원금",
+                "14": "환급",
+                "15": "중고물품 판매",
             }
 
+            i=0
+
             print("\n카테고리를 선택하세요:")
+
+            print("=====지출 카테고리=====")
             for num, name in categories.items():
+                if i==9:
+                    print()
+                    print("=====수입 카테고리=====")
                 print(f"[{num}] {name}")
+                i+=1
 
             while True:
                 choice = input("카테고리 번호 입력: ").strip()
