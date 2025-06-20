@@ -31,7 +31,7 @@ while True:
     elif number==3:
         edit.rewrite_record(edit.load_records())
     elif number==4:
-        break
+        search.search_result()
     elif number==5:
         clear()
         print("프로그램을 종료합니다.")
