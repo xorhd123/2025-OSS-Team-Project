@@ -20,10 +20,10 @@ def display_records(records):
         return
     
     print("-----------------")
-    print("     records     ")
+    print(" display records ")
     print("-----------------")
     for r in records:
-        print(f"[{r['data']}] {r['type']} - {r['category']} / {r['item']} / {r['amount']}원")
+        print(f"[{r['날짜']}] {r['카테고리']} - {r['아이템']} / {r['금액']}원 / {r['유형']}")
     print()
 
 def display_category(records):
