@@ -21,11 +21,11 @@ def save_records(records, filename=DATA_FILE):
         writer = csv.writer(f)
         for r in records:
             writer.writerow([
-                r['date'],
-                r['type'],
-                r['category'],
-                r['item'],
-                r['amount']
+                r['날짜'],
+                r['유형'],
+                r['카테고리'],
+                r['아이템'],
+                r['금액']
             ])
     print(f"수정 내용 저장 완료")
 
@@ -38,7 +38,7 @@ def rewrite_record(records):
     print("   수정 가능한 항목   ")
     print("--------------------")
     for idx, r in enumerate(records, start=1):
-        print(f"{idx}: [{r['date']}] {r['type']} - {r['category']} / {r['item']} / {r['amount']}원")
+        print(f"{idx}: [{r['날짜']}] {r['유형']} - {r['카테고리']} / {r['아이템']} / {r['금액']}원")
     print("--------------------")
 
     while True:
