@@ -61,15 +61,42 @@ def rewrite_record(records):
         if field not in fields:
             print("잘못 입력하셨습니다. 다시 선택해주세요.")
             continue
+        
+        if field == '카테고리':
+            categories = {
+                "1": "식비",
+                "2": "교통",
+                "3": "쇼핑",
+                "4": "문화",
+                "5": "건강",
+                "6": "교육",
+                "7": "생활",
+                "8": "저축",
+                "9": "기타"
+            }
+
+            print("\n카테고리를 선택하세요:")
+            for num, name in categories.items():
+                print(f"[{num}] {name}")
+
+            while True:
+                choice = input("카테고리 번호 입력: ").strip()
+                if choice in categories:
+                    new_write = categories[choice]
+                    break
+                else:
+                    print("올바른 번호를 입력해주세요 (1~9).")
         break
         
     while True:
+        if field == '카테고리':
+            break
         new_write = input(f"새 {field} 값 입력 (현재: {record[field]}): ").strip()
-        if field == 'amount':
+        if field == '금액':
             if not new_write.isdigit():
                 print("숫자만 입력 가능합니다.")
                 continue
-        if field == 'type':
+        if field == '유형':
             if new_write not in ('지출', '수입'):
                 print("type은 '지출' 또는 '수입'만 입력 가능합니다")
                 continue
