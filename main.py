@@ -4,8 +4,6 @@
 # import search
 import os
 
-test
-test2
 
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')

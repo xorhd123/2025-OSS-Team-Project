@@ -1,9 +1,9 @@
 import csv
 # 파일 불러오기
-# import view_stats
+import view_stats
 
 def search_result():
-    records = load_records() #view_stats.load_records()
+    records = view_stats.load_records() #view_stats.load_records()
 
     if not records:
         print("기록이 없습니다.")
