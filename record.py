@@ -64,4 +64,4 @@ def get_record():
         category = input_income_item()
 
     data = get_current_time()
-    return f"{data},{category},{item},{amount},{transaction_type}"
+    return [data, category, item, amount, transaction_type]

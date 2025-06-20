@@ -24,9 +24,9 @@ while True:
     number = Menu()
     clear()
     if number==1:
-        record.get_record()
+        save.save_data(record.get_record())
     elif number==2:
-        print("2")
+        view_stats.display_records(view_stats.load_records())
     elif number==3:
         print("3")
     elif number==4:

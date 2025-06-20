@@ -23,7 +23,7 @@ def display_records(records):
     print("     records     ")
     print("-----------------")
     for r in records:
-        print(f"[{r['date']}] {r['type']} - {r['category']} / {r['item']} / {r['amount']}원")
+        print(f"[{r['data']}] {r['type']} - {r['category']} / {r['item']} / {r['amount']}원")
     print()
 
 def display_category(records):
