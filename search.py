@@ -15,8 +15,11 @@ def search_result():
     print("3. 카테고리로 검색")
     choice = int(input("번호 입력: "))
 
-    if(choice == 1 or choice == 2):
-        keyword = input("검색어를 입력하세요: ").strip()
+    if(choice == 1):
+        keyword = input("날짜를 입력하세요(YYYY-MM-DD): ")
+
+    if(choice == 2):
+        keyword = input("유형을 입력하세요(수입/지출): ").strip()
 
     if(choice == 3):
         categories = {
