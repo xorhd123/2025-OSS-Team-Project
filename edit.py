@@ -65,7 +65,7 @@ def rewrite_record(records):
             continue
         
         if field == '카테고리':
-            categories = {
+            consume_categories = {
                 "1": "식비",
                 "2": "교통",
                 "3": "쇼핑",
@@ -74,34 +74,53 @@ def rewrite_record(records):
                 "6": "교육",
                 "7": "생활",
                 "8": "저축",
-                "9": "기타",
-                "10": "급여",
-                "11": "용돈",
-                "12": "금융소득",
-                "13": "공적 지원금",
-                "14": "환급",
-                "15": "중고물품 판매"
+                "9": "기타"
+            }
+
+            income_categories = {
+                "1": "급여",
+                "2": "용돈",
+                "3": "금융소득",
+                "4": "공적 지원금",
+                "5": "환급",
+                "6": "중고물품 판매"
             }
 
             i=0
 
             print("\n카테고리를 선택하세요:")
 
-            print("=====지출 카테고리=====")
-            for num, name in categories.items():
-                if i==9:
-                    print()
-                    print("=====수입 카테고리=====")
-                print(f"[{num}] {name}")
-                i+=1
+            if record['유형'] == '지출':
+                print("=====지출 카테고리=====")
+                for num, name in consume_categories.items():
+                    if i==9:
+                        break
+                    print(f"[{num}] {name}")
+                    i+=1
+
+            if record['유형'] == '수입':
+
+                for num, name in income_categories.items():
+                    if i==9:
+                        print()
+                        print("=====수입 카테고리=====")
+                    print(f"[{num}] {name}")
+                    i+=1
 
             while True:
                 choice = input("카테고리 번호 입력: ").strip()
-                if choice in categories:
-                    new_write = categories[choice]
-                    break
-                else:
-                    print("올바른 번호를 입력해주세요 (1~15).")
+                if record['유형'] == '지출':
+                    if choice in consume_categories:
+                        new_write = consume_categories[choice]
+                        break
+                    else:
+                        print("올바른 번호를 입력해주세요 (1~9).")
+                if record['유형'] == '수입':
+                    if choice in income_categories:
+                        new_write = income_categories[choice]
+                        break
+                    else:
+                        print("올바른 번호를 입력해주세요 (1~6).")
         break
         
     while True:

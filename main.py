@@ -33,6 +33,5 @@ while True:
     elif number==4:
         search.search_result()
     elif number==5:
-        clear()
         print("프로그램을 종료합니다.")
         break
