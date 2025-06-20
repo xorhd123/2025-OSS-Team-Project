@@ -28,19 +28,31 @@ def search_result():
         6: "교육",
         7: "생활",
         8: "저축",
-        9: "기타"
+        9: "기타",
+        10: "급여",
+        11: "용돈",
+        12: "금융소득",
+        13: "공적 지원금",
+        14: "환급",
+        15: "중고물품 판매"
     }
+
+        i=0
 
         print("\n카테고리를 선택하세요:")
         for num, name in categories.items():
-            print(f"[{num}] {name}")
+                if i==9:
+                    print()
+                    print("=====수입 카테고리=====")
+                print(f"[{num}] {name}")
+                i+=1
 
         while True:
-            choice = int(input("카테고리 번호 입력: "))
-            if choice in categories:
-                keyword = categories[choice]
+            category_choice = int(input("카테고리 번호 입력: "))
+            if category_choice in categories:
+                keyword = categories[category_choice].strip()
                 break
-            print("올바른 번호를 입력해주세요 (1~9).")
+            print("올바른 번호를 입력해주세요 (1~15).")
 
 
     found = False

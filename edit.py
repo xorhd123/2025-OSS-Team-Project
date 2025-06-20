@@ -47,7 +47,7 @@ def rewrite_record(records):
         try:
             i = int(input("수정할 번호를 입력하세요: ").strip())
             if 1 <= i <= len(records):
-                record = records[i-1]
+                record = records[i]
                 break
             else:
                 print(f"잘돗된 번호입니다. 다시 입력해주세요.")
@@ -80,7 +80,7 @@ def rewrite_record(records):
                 "12": "금융소득",
                 "13": "공적 지원금",
                 "14": "환급",
-                "15": "중고물품 판매",
+                "15": "중고물품 판매"
             }
 
             i=0
@@ -101,7 +101,7 @@ def rewrite_record(records):
                     new_write = categories[choice]
                     break
                 else:
-                    print("올바른 번호를 입력해주세요 (1~9).")
+                    print("올바른 번호를 입력해주세요 (1~15).")
         break
         
     while True:
