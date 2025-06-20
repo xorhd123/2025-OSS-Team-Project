@@ -3,6 +3,7 @@ import save
 import view_stats
 import search
 import os
+import edit
 
 
 def clear():
@@ -28,6 +29,10 @@ while True:
     elif number==2:
         view_stats.display_records(view_stats.load_records())
     elif number==3:
-        print("3")
+        edit.rewrite_record(edit.load_records())
     elif number==4:
+        break
+    elif number==5:
+        clear()
+        print("프로그램을 종료합니다.")
         break

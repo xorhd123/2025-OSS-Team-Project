@@ -22,10 +22,10 @@ def save_records(records, filename=DATA_FILE):
         for r in records:
             writer.writerow([
                 r['date'],
+                r['type'],
                 r['category'],
                 r['item'],
-                r['amount'],
-                r['type']
+                r['amount']
             ])
     print(f"수정 내용 저장 완료")
 
