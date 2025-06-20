@@ -18,7 +18,7 @@ def get_amount():
 
 #항목명 입력
 def get_item():
-    return input("항목명을 입력하세요 (예: 점심, 월급 등): ").strip()
+    return input("항목명을 입력하세요 (예: 버스, 치킨 등): ").strip()
 
 #카테고리 선택 함수
 def select_category_consume():
@@ -74,14 +74,14 @@ def get_record():
 
     transaction_type = get_transaction_type()
 
-    item = get_item()
-
-    amount = get_amount()
-
     if transaction_type == "지출":
         category = select_category_consume()
     else:  # 수입
         category = select_category_income()
+
+    item = get_item()
+
+    amount = get_amount()
 
     date = get_current_time()
     return [date, transaction_type, category, item, amount]
