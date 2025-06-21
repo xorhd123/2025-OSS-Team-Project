@@ -1,6 +1,11 @@
 import csv
 # 파일 불러오기
 import view_stats
+import os
+
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def search_result():
     records = view_stats.load_records() #view_stats.load_records()
@@ -43,6 +48,7 @@ def search_result():
         i=0
 
         print("\n카테고리를 선택하세요:")
+        print("=====지출 카테고리=====")
         for num, name in categories.items():
                 if i==9:
                     print()
@@ -80,6 +86,8 @@ def search_result():
 
     print("=======================")
     input("\n아무 키를 입력시 종료합니다.")
+    clear()
+    
 
 # 테스트용 실행
 if __name__ == '__main__':
