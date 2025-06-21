@@ -1,4 +1,8 @@
 from datetime import datetime
+import os
+
+def clear():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 #수입 지출 함수
 def get_transaction_type():
@@ -84,4 +88,6 @@ def get_record():
     amount = get_amount()
 
     date = get_current_time()
+
+    clear()
     return [date, transaction_type, category, item, amount]
